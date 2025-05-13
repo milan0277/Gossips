@@ -12,10 +12,10 @@ function App() {
       <Routes>
         <Route exact path="" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
-          <Route path="/chatPage" element={
-            <ProtecttiveRoute>
-              <Chat/>
-            </ProtecttiveRoute>}/>
+        <Route path="/chatPage" element={
+          <ProtecttiveRoute>
+            <Chat />
+          </ProtecttiveRoute>} />
       </Routes>
     </StoreProvider>
   );

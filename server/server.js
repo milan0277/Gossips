@@ -6,28 +6,25 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { Server } = require("socket.io");
 const http = require('http');
-const path = require('path');
 
-// Log the environment variable for debugging
-console.log(process.env.APP_CLIENT_URL);
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: process.env.APP_CLIENT_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // Include credentials if necessary
+    credentials: true, 
   }
 });
 
-// Database connection
+// Database
 const db = require("./db/db");
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// Port setup
+
 const PORT = process.env.PORT || 5000;
 
 
@@ -38,7 +35,7 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
 
-// Apply CORS middleware to the Express app
+
 app.use(cors(corsOptions));
 
 
@@ -84,7 +81,7 @@ io.on("connection", (socket) => {
   });
 });
 
-// Start the server
+
 server.listen(PORT, () => {
   console.log('Server is running at', PORT);
 });
