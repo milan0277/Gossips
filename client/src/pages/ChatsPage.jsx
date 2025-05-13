@@ -220,7 +220,9 @@ const ChatsPage = () => {
           </div>
         </div>
  
-        <div className="card-footer">
+            {
+              selectedUsers?
+              <div className="card-footer">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -255,7 +257,9 @@ const ChatsPage = () => {
               </span>
             </div>
           </form>
-        </div>
+        </div>:""
+            }
+        
   
       </div>
       <Toaster/>

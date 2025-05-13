@@ -47,13 +47,13 @@ const Sidebar = () => {
             data-accordion="false"
           >
             {otherUsers
-              ? otherUsers?.map((users) => {
+              ? otherUsers?.map((users,index) => {
                 const u = users?.name
                   .split(" ")[0]
                   .split("")[0]
                   .toUpperCase();
                 return (
-                  <li className="nav-link m31">
+                  <li className="nav-link m31" key={index}>
                     <div className="nav-icon fas m3">{u}</div>
                     <p
                       style={{ fontSize: "18px" }}

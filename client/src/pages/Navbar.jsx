@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* Right navbar links */}
       <ul className="navbar-nav ml-auto">
         {/* Navbar Search */}
-        <li className="nav-item">
+       
           <li className="nav-item dropdown">
             <Link className="nav-link" data-toggle="dropdown" to="#">
               <Chip
@@ -89,7 +89,6 @@ const Navbar = () => {
                 </Grid>
               )}
             </div>
-          </li>
         </li>
       </ul>
       <Toaster />
