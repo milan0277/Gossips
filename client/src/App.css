@@ -66,9 +66,9 @@
     display: flex;
     justify-content: center;
     font-weight: bolder;
-    background-color: #007bff;
+    background-color: #2e5faa;
     color: white;
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: 2px 2px 2px 5px #2e5faa;
 }
 
 .sunb{
@@ -99,9 +99,8 @@
     align-items: center;
     font-size: larger;
     font-weight: bolder;
-    background-color: #007bff;
+    background-color: #2e5faa;
     color: white;
-    box-shadow: 2px 2px 2px 2px black;
 }
 
 .m13{
@@ -133,7 +132,7 @@
         align-items: center;
         font-size: larger;
         font-weight: bolder;
-        background-color: #007bff;
+        background-color: #2e5faa;
         color: white;
  
 }
@@ -151,7 +150,7 @@
       align-items: center;
         font-size: larger;
         font-weight: bolder;
-        background-color: #007bff;
+        background-color: #2e5faa;
         color: white;
 }
 
@@ -173,3 +172,4 @@
 .an{
     color: red;
 }
+

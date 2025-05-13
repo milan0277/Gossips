@@ -249,7 +249,7 @@ const ChatsPage = () => {
               </span>
 
               <span className="input-group-append">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary btnNEw">
                   Send
                 </button>
               </span>

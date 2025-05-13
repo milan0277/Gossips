@@ -20,6 +20,6 @@ const { allUserExceptLoggedUser,sendMessage,receiveMessage,showImage } = require
 router.get('/api/otherusers',authMid,allUserExceptLoggedUser)
 router.post('/api/sendmessage/:id',authMid,upload.single("attachment"),sendMessage)
 router.get('/api/receivemessage/:id',authMid,receiveMessage)
-router.get('/api/showimage/:fileName',authMid,showImage)
+router.get('/api/showimage/:fileName',showImage)
 
 module.exports = router

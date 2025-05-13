@@ -4,7 +4,7 @@ import axios from "axios";
 import store from "../context/context";
 import Image from "../assets/Innovation1.png";
 import Image2 from "../assets/g.png";
-import toast,{Toaster} from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const Sidebar = () => {
   const [otherUsers, setOtherUsers] = useState(null);
@@ -16,10 +16,8 @@ const Sidebar = () => {
       const res = await axios.get(`${import.meta.env.VITE_API_URL_DEV}/app/api/otherusers`, {
         withCredentials: true,
       });
-      console.log(res)
       res?.status == 200 ? setOtherUsers(res?.data) : setOtherUsers(null)
     } catch (err) {
-      console.log(err)
       toast.error(err?.response?.data?.error || "Internal Server Error");
     }
   };
@@ -33,22 +31,9 @@ const Sidebar = () => {
       className="main-sidebar sidebar-dark-primary elevation-4 "
       style={{ paddingBottom: "2%" }}
     >
-      <Link
-        className="brand-link logo-switch"
-        style={{ backgroundColor: "whitesmoke" }}
-      >
-        <img
-          src={Image2}
-          alt="Cogent Logo"
-          className="brand-image-xs logo-xl"
-          style={{ opacity: "5", maxHeight: "43px", marginLeft: "3rem" }}
-        />
-        <img
-          src={Image}
-          alt="Cogent Small Logo"
-          className="brand-image-xl logo-xs"
-          style={{ opacity: "5", maxHeight: "43px" }}
-        />
+      <Link to="#" className="brand-link logo-switch" style={{ backgroundColor: 'whitesmoke' }}>
+        <img src={Image2} alt="Cogent Logo" className="brand-image-xs logo-xl" style={{ opacity: "5", marginTop: "5px", marginLeft: '2.6rem' }} />
+        <img src={Image} alt="Cogent Small Logo" className="brand-image-xl logo-xs" style={{ opacity: "5", maxHeight: "43px" }} />
       </Link>
 
       <div className="sidebar">
@@ -63,27 +48,27 @@ const Sidebar = () => {
           >
             {otherUsers
               ? otherUsers?.map((users) => {
-                  const u = users?.name
-                    .split(" ")[0]
-                    .split("")[0]
-                    .toUpperCase();
-                  return (
-                    <li className="nav-link m31">
-                      <div className="nav-icon fas m3">{u}</div>
-                      <p
-                        style={{ fontSize: "18px" }}
-                        onClick={() => setSelectedUsers(users)}
-                      >
-                        {users?.name?.toUpperCase()}
-                      </p>
-                    </li>
-                  );
-                })
+                const u = users?.name
+                  .split(" ")[0]
+                  .split("")[0]
+                  .toUpperCase();
+                return (
+                  <li className="nav-link m31">
+                    <div className="nav-icon fas m3">{u}</div>
+                    <p
+                      style={{ fontSize: "18px" }}
+                      onClick={() => setSelectedUsers(users)}
+                    >
+                      {users?.name?.toUpperCase()}
+                    </p>
+                  </li>
+                );
+              })
               : ""}
           </ul>
         </nav>
       </div>
-      <Toaster/>
+      <Toaster />
     </aside>
   );
 };
